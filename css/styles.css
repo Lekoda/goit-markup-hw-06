@@ -17,7 +17,7 @@
   --elemnt-white-color: #ffffff;
   --elemnt-grey-color: #757575;
   --backdrop-bg:rgba(0, 0, 0, 0.2);
-  --overlay: rgba(33, 150, 243, 0.9)
+  --overlay: rgba(33, 150, 243, 0.9);
 }
 body {
   background-color: var(--primary-bcg-color);
@@ -651,6 +651,11 @@ address a:active {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   min-width: 528px;
   min-height: 581px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 41px;
+  padding-right: 39px;
+
   background-color: var(--primary-bcg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -703,4 +708,108 @@ address a:active {
   100% {
     background-color: #DAF7A6;
   }
+}
+
+textarea {
+  resize: none;
+}
+
+.modal-title {
+  margin-bottom: 12px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--text-grey-color);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  margin-bottom: 4px;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.01em;
+  
+  color: var(--text-lightgrey-color);
+}
+.form-field input {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.form-textarea {
+  min-height: 120px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  
+}
+.form-textarea::placeholder {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.01em;
+  
+  color: rgba(117, 117, 117, 0.5);
+}
+.form-policy {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.label-policy {
+  margin-left: 8.38px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142;
+  letter-spacing: 0.03em;
+  color: var(--text-lightgrey-color);
+}
+.link-policy {
+  color: var(--accent);
+}
+.submit-button {
+  display: block;
+  min-width: 200px;
+  height: 50px;
+  margin: 0;
+
+  background: var(--accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--text-white-color);
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
 }
