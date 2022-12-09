@@ -519,6 +519,7 @@ address a:active {
   fill: var(--elemnt-white-color);
 }
 .signup-field {
+  position: relative;
   display: flex;
   gap: 12px;
 
@@ -536,9 +537,11 @@ address a:active {
   padding-bottom: 15px;
   padding-left: 16px;
 }
+
 .signup-button {
-  /* position: relative; */
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 200px;
   height: 50px;
   margin: 0;
@@ -557,8 +560,9 @@ address a:active {
   color: var(--text-white-color);
 }
 .sign-icon {
-  /* position: absolute; */
-  align-items: baseline;
+  margin-left: 10px;
+  /* align-self: auto; */
+  /* margin-top: 13px; */
   width: 24px;
   height: 24px;
   fill: currentColor;
@@ -727,19 +731,26 @@ address a:active {
 
   cursor: pointer;
 
-  animation-name: changeBgColor;
+  /* animation-name: changeBgColor;
   animation-duration: 1500ms;
   animation-timing-function: linear;
   animation-delay: 100ms;
-  animation-iteration-count: 3;
+  animation-iteration-count: 3; */
 }
-.close-btn-icon {
+.close-btn-icon{
   width: 18px;
   height: 18px;
   fill: currentColor;
-}
 
-@keyframes changeBgColor {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn-icon:hover,
+.close-btn-icon:focus {
+  fill: var(--accent);
+}
+/* @keyframes changeBgColor {
   0% {
     background-color:var(--primary-bcg-color);
   }
@@ -752,8 +763,10 @@ address a:active {
   100% {
     background-color: #DAF7A6;
   }
-}
+} */
 
+
+/* modal form  */
 textarea {
   resize: none;
 }
@@ -788,19 +801,39 @@ textarea {
   
   color: var(--text-lightgrey-color);
 }
+
 .form-field input {
   padding-top: 11px;
   padding-bottom: 11px;
-  padding-left: 12px;
+  padding-left: 42px;
   padding-right: 12px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  cursor: pointer;
+  outline: transparent;
 }
+,.modal-input {
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus {
+  border-color: var(--accent);
+}
+
+
 .modal-icon {
   position:absolute;
   left: 12px;
   top: 50%;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus +.modal-icon {
+  fill: var(--accent);
 }
 .form-textarea {
   min-height: 120px;
@@ -811,8 +844,13 @@ textarea {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  
+  outline: transparent;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .form-textarea::placeholder {
   font-family: inherit;
   font-weight: 400;
@@ -822,13 +860,26 @@ textarea {
   
   color: rgba(117, 117, 117, 0.5);
 }
+.form-textarea:focus {
+  border-color: var(--accent);
+}
+/* #checkbox  */
 .form-policy {
   display: flex;
+  max-width: 423px;
+  height: 24px;
+  margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
+  align-items: center;
 }
 .label-policy {
-  margin-left: 8.38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-left: 0;
   font-family: inherit;
   font-weight: 400;
   font-size: 14px;
@@ -836,6 +887,28 @@ textarea {
   letter-spacing: 0.03em;
   color: var(--text-lightgrey-color);
 }
+.label-policy span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  fill: transparent;
+
+  transition-property: border, background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-checkbox:checked +.label-policy span {
+  border: none;
+  background-color: var(--accent);
+  fill: var(--primary-bcg-color);
+}
+
 .link-policy {
   color: var(--accent);
 }
@@ -857,9 +930,11 @@ textarea {
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--text-white-color);
+  cursor: pointer;
 }
 
 .form-submit {
   display: flex;
   justify-content: center;
+
 }
